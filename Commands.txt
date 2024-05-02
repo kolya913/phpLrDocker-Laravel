@@ -1,0 +1,5 @@
+docker compose up -d
+docker exec -it lab-dbMain_postgres-1 createdb -U  postgres hotel2
+cat /pat/to/backup/db.sql | docker exec -i lab-dbMain_postgres-1 pg_restore -U postgres -d hotel2 
+
+docker exec -it redis redis-cli //вход в редиску
